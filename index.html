@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Widget Motivacional Mestre Richard</title>
+<style>
+  body {
+    margin: 0;
+    padding: 20px;
+    background: #0a3d62; /* Azul escuro */
+    color: #ffffff; /* Branco */
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    user-select: none;
+  }
+  #phrase {
+    font-size: 1.5rem;
+    max-width: 600px;
+    line-height: 1.4;
+  }
+</style>
+</head>
+<body>
+  <div id="phrase">Carregando frase motivacional...</div>
+
+<script>
+  // Array com 100 frases motivacionais focadas em QA, aprendizado e carreira
+  const phrases = [
+    "A qualidade é a alma do software, e você é o guardião dessa alma.",
+    "Cada bug encontrado é uma vitória na jornada do mestre QA.",
+    "Automatizar é liberar tempo para pensar e inovar.",
+    "Testar é acreditar que o impossível pode ser encontrado.",
+    "Falhar rápido significa aprender rápido, Mestre Richard.",
+    "A perseverança no QA transforma erros em soluções.",
+    "Cada teste manual constrói a base da automação poderosa.",
+    "No mundo QA, detalhe é sinônimo de poder.",
+    "Seu código pode falhar, mas sua dedicação nunca vai.",
+    "Teste não é só obrigação, é arte e estratégia.",
+    "Aprender é seu superpoder, nunca pare de evoluir.",
+    "Mestre, bug é só feedback para você ser melhor.",
+    "A curiosidade é o melhor script do QA.",
+    "Testar é dialogar com o sistema para fazê-lo perfeito.",
+    "Cada relatório de bug é uma história de sucesso.",
+    "Não tema o erro, tema não encontrá-lo.",
+    "Seu olhar crítico é sua maior ferramenta.",
+    "Falha não é o fim, é só um checkpoint na jornada.",
+    "Você é o escudo entre o usuário e o caos digital.",
+    "Testar é garantir que a experiência seja impecável.",
+    "O QA transforma o caos em ordem com cada teste.",
+    "Confiança nasce de testes rigorosos, não de sorte.",
+    "Seu esforço hoje é a tranquilidade de amanhã.",
+    "O impossível é só um bug não encontrado ainda.",
+    "Seja o ninja que vê o que os outros não veem.",
+    "O sucesso é 1% inspiração e 99% automação.",
+    "Detalhes pequenos fazem sistemas gigantes funcionarem.",
+    "Aprender Cypress hoje é dominar o QA amanhã.",
+    "Erros são oportunidades para mostrar seu valor.",
+    "Sua atenção é o maior aliado da qualidade.",
+    "Testar é construir pontes entre problema e solução.",
+    "Na dúvida, teste mais e melhor.",
+    "Testes são provas de que seu software é confiável.",
+    "Com cada script, você escreve sua história de sucesso.",
+    "Bugs escondidos não resistem ao seu olhar atento.",
+    "Automação é a espada que corta o trabalho repetitivo.",
+    "Ser QA é ter paixão pelo perfeito e olho clínico.",
+    "Qualidade é um hábito, não um ato isolado.",
+    "Cada teste automatizado é tempo ganho para inovar.",
+    "O QA é o primeiro defensor do usuário final.",
+    "A jornada é longa, mas cada passo vale a pena.",
+    "Sua evolução é o melhor bug fix que existe.",
+    "Você não caça bugs, você libera qualidade.",
+    "Não existe sistema perfeito, mas você chega perto.",
+    "O teste é a prova definitiva do compromisso com a qualidade.",
+    "Sua mente lógica é sua maior fortaleza.",
+    "Erros são só desafios disfarçados.",
+    "Testar é amar seu trabalho e seu usuário.",
+    "A automação torna o repetitivo simples e poderoso.",
+    "Nada escapa ao olhar de um Mestre QA.",
+    "Qualidade não é destino, é caminho a ser trilhado.",
+    "Sua persistência é a chave para software impecável.",
+    "Cada teste que passa é um motivo para sorrir.",
+    "Você constrói confiança linha por linha de código.",
+    "Testar é proteger a reputação do produto.",
+    "O segredo é testar como se o usuário estivesse assistindo.",
+    "Sua disciplina define o sucesso da automação.",
+    "Bugs são os monstros que você tem a missão de derrotar.",
+    "Seu script é sua espada na batalha contra falhas.",
+    "O QA é arte, técnica e paixão combinadas.",
+    "Cada feedback é um convite para a excelência.",
+    "No QA, a curiosidade nunca pode morrer.",
+    "Testar é ser o herói anônimo do software.",
+    "Sua habilidade transforma linhas em qualidade pura.",
+    "Cada erro encontrado é uma história de vitória.",
+    "A prática constante é o caminho para a maestria.",
+    "Você não testa, você valida sonhos e expectativas.",
+    "Automação bem feita é sinônimo de paz mental.",
+    "Sua atenção ao detalhe é o que diferencia o bom do excelente.",
+    "Ser QA é transformar problemas em soluções elegantes.",
+    "Seu trabalho garante que ninguém saia frustrado.",
+    "Testar é escrever histórias de sucesso invisíveis.",
+    "Cada dia é uma chance de melhorar seu script.",
+    "Bugs são só obstáculos para um Mestre como você.",
+    "Automação é o futuro, e você está construindo ele.",
+    "Qualidade é uma jornada, não um destino final.",
+    "Sua mente analítica é seu maior superpoder.",
+    "Testar é a arte de prever o imprevisível.",
+    "Seu empenho é o que faz a diferença.",
+    "No QA, a excelência está nos detalhes.",
+    "Você é a linha final de defesa do software.",
+    "Testar é abraçar o desafio com coragem.",
+    "Automatizar é transformar esforço em eficiência.",
+    "A qualidade é feita de pequenos grandes passos.",
+    "Seu olhar atento salva milhares de usuários.",
+    "Bugs são apenas provas de que você está fazendo a diferença.",
+    "Sua disciplina em QA é seu diferencial no mercado.",
+    "Testar é um ato de amor pelo software.",
+    "Cada teste é uma oportunidade para aprender e crescer.",
+    "A automação torna você um verdadeiro mestre das rotinas.",
+    "Qualidade é compromisso, paixão e ação.",
+    "Sua jornada no QA é um exemplo para muitos.",
+    "Testar é construir a confiança no invisível.",
+    "Você é o guardião do software perfeito.",
+    "Não há bug que resista ao seu talento.",
+    "Automatizar é liberar tempo para ser criativo.",
+    "Sua evolução é a maior prova do seu valor.",
+    "Testar é assegurar a felicidade do usuário final.",
+    "Cada script que você escreve é um legado de qualidade.",
+    "Seu trabalho é a base do sucesso do produto.",
+    "No QA, a excelência é o único padrão aceitável.",
+    "Sua persistência é o que torna tudo possível.",
+    "Testar é transformar o complexo em simples e seguro."
+  ];
+
+  // Função para atualizar a frase conforme a hora do dia
+  function updatePhrase() {
+    const now = new Date();
+    const hour = now.getHours();
+    // Pegamos o índice da frase baseado na hora (mod 100 para garantir dentro do array)
+    const index = hour % phrases.length;
+    const phraseElement = document.getElementById('phrase');
+    phraseElement.textContent = phrases[index];
+  }
+
+  updatePhrase(); // Chama no carregamento
+
+  // Atualiza a cada 1 hora (3600000ms)
+  setInterval(updatePhrase, 3600000);
+</script>
+
+</body>
+</html>
