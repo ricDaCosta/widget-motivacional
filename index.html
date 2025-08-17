@@ -1,0 +1,68 @@
+import React from react;
+import { Card, CardContent } from @componentsuicard;
+import { Button } from @componentsuibutton;
+import { Home, List, Settings, Info } from lucide-react;
+
+export default function CoreDeskDashboard() {
+  return (
+    div className=flex min-h-screen bg-gradient-to-br from-zinc-900 to-black text-white
+      { Sidebar }
+      aside className=w-64 bg-zinc-950 p-4 border-r border-zinc-800
+        div className=mb-10
+          h1 className=text-2xl font-bold tracking-wideCoreDeskh1
+        div
+        nav className=space-y-4
+          MenuItem icon={Home } label=Início 
+          MenuItem icon={List } label=Chamados 
+          MenuItem icon={Settings } label=Configurações 
+          MenuItem icon={Info } label=Ajuda e Suporte 
+        nav
+      aside
+
+      { Main Content }
+      main className=flex-1 p-8 space-y-6 overflow-auto
+        Section title=Chamados Recentes
+          p className=text-zinc-400Aqui você verá os chamados abertos e seu status.p
+        Section
+
+        Section title=Abrir Novo Chamado
+          Button className=bg-blue-600 hoverbg-blue-700Novo ChamadoButton
+        Section
+
+        Section title=Relatórios e Estatísticas
+          Card
+            CardContent
+              p className=text-zinc-400Gráficos e dados sobre atendimentos realizados.p
+            CardContent
+          Card
+        Section
+
+        Section title=Central de Ajuda
+          Card
+            CardContent
+              p className=text-zinc-400Busque por manuais, tutoriais e perguntas frequentes.p
+            CardContent
+          Card
+        Section
+      main
+    div
+  );
+}
+
+function MenuItem({ icon, label }) {
+  return (
+    div className=flex items-center gap-3 text-zinc-300 hovertext-white cursor-pointer
+      {icon}
+      span{label}span
+    div
+  );
+}
+
+function Section({ title, children }) {
+  return (
+    div
+      h2 className=text-xl font-semibold mb-2{title}h2
+      {children}
+    div
+  );
+}
